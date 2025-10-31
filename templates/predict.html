@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>ADHD Risk Prediction</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: 
+                linear-gradient(-45deg, rgba(161,196,253,0.6), rgba(194,233,251,0.6), rgba(137,247,254,0.6), rgba(102,166,255,0.6)), 
+                url('https://img.freepik.com/premium-vector/caduceus-symbol-abstract-geometric-blue-background_41814-302.jpg');
+            background-size: 400% 400%, cover;
+            background-position: center;
+            animation: gradientBG 12s ease infinite;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            color: black;
+            overflow-y: auto;
+            padding: 40px 0;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%, center; }
+            50% { background-position: 100% 50%, center; }
+            100% { background-position: 0% 50%, center; }
+        }
+
+        .title-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 20px;
+            text-align: center;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .title-container img {
+            width: 60px;
+            height: 60px;
+            background: transparent;
+            mix-blend-mode: multiply;
+            border-radius: 8px;
+        }
+
+        .title-container h1 {
+            font-size: 28px;
+            font-weight: bold;
+            color: black;
+            margin: 0;
+        }
+
+        .content {
+            width: 90%;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        form {
+            width: 100%;
+            background: rgba(255,255,255,0.4);
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+        }
+
+        .form-group {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            flex-wrap: wrap;
+        }
+
+        .form-group label {
+            width: 100%;
+            max-width: 220px;
+            font-weight: bold;
+            color: black;
+            margin-bottom: 5px;
+            font-size: 16px;
+        }
+
+        .form-group input {
+            flex: 1;
+            padding: 8px;
+            border-radius: 6px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            background: rgba(255,255,255,0.8);
+            color: black;
+            width: 100%;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background: #66a6ff;
+            color: white;
+            border: none;
+            border-radius: 8px;
+            font-size: 18px;
+            cursor: pointer;
+            transition: 0.3s;
+            margin-top: 10px;
+        }
+
+        button:hover {
+            background: #4a90e2;
+        }
+
+        .result-container {
+            width: 100%;
+        }
+
+        .result-box {
+            background: rgba(255, 255, 255, 0.4);
+            border-radius: 10px;
+            padding: 20px;
+            text-align: left;
+            font-size: 16px;
+            color: black;
+            font-weight: 500;
+            box-shadow: 0 3px 6px rgba(0,0,0,0.1);
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        .final-prediction {
+            margin-top: 15px;
+            padding: 14px;
+            border-radius: 10px;
+            text-align: center;
+            font-size: 18px;
+            font-weight: bold;
+            transition: 0.3s ease;
+        }
+
+        .light-red {
+            background-color: #fdeaea;
+            color: #d93025;
+        }
+
+        .light-yellow {
+            background-color: #fff8e1;
+            color: #b58900;
+        }
+
+        .light-green {
+            background-color: #e6f9e6;
+            color: #2e7d32;
+        }
+
+        @media (max-width: 600px) {
+            .title-container h1 {
+                font-size: 22px;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="title-container">
+        <img src="https://cdn.prod.website-files.com/62a4688b769b37698f1c518d/65f3c27e09596a3b63ddf880_c0zgDfQOMaabsRKQIwvZ6dsNZmxY70khf62EoMpVdsGpwGbufWRRRc0GLE3bTQhaHHdTPFEdMPLDF8S-7CK1Zb4xu_2uJ7aYGTuoxT8rpJ8pWgnuX-a_eFB21f1qjPKEmgk2JrqZpEKBcP6UzxCB-Zs.png" alt="ADHD Logo">
+        <h1>Ensemble Classification for Teen ADHD Risk</h1>
+    </div>
+
+    <div class="content">
+        <form id="adhdForm">
+            <div class="form-group">
+                <label>Age:</label>
+                <input type="number" step="any" id="age" required>
+            </div>
+            <div class="form-group">
+                <label>Attention Score:</label>
+                <input type="number" step="any" id="attention" required>
+            </div>
+            <div class="form-group">
+                <label>Hyperactivity Score:</label>
+                <input type="number" step="any" id="hyperactivity" required>
+            </div>
+            <div class="form-group">
+                <label>Impulsivity Score:</label>
+                <input type="number" step="any" id="impulsivity" required>
+            </div>
+            <div class="form-group">
+                <label>Sleep Hours:</label>
+                <input type="number" step="any" id="sleep" required>
+            </div>
+            <div class="form-group">
+                <label>Academic Score:</label>
+                <input type="number" step="any" id="academic" placeholder="1–100 (percentage)" required>
+            </div>
+            <button type="submit">PREDICT</button>
+        </form>
+
+        <div id="result" class="result-container"></div>
+    </div>
+    <a href="/awareness" style="text-decoration:none;">
+    <button style="background:#4a90e2;color:white;padding:10px 20px;border:none;border-radius:8px;cursor:pointer;">
+        Awareness
+    </button>
+</a>
+
+
+    <script>
+        document.getElementById("adhdForm").addEventListener("submit", async function(e) {
+            e.preventDefault();
+
+            const data = {
+                age: parseFloat(document.getElementById("age").value),
+                attention_score: parseFloat(document.getElementById("attention").value),
+                hyperactivity_score: parseFloat(document.getElementById("hyperactivity").value),
+                impulsivity_score: parseFloat(document.getElementById("impulsivity").value),
+                sleep_hours: parseFloat(document.getElementById("sleep").value),
+                academic_score: parseFloat(document.getElementById("academic").value)
+            };
+
+            try {
+                const res = await fetch("/predict_api", {
+                    method: "POST",
+                    headers: { "Content-Type": "application/json" },
+                    body: JSON.stringify(data)
+                });
+
+                const result = await res.json();
+
+                let colorClass = "light-red";
+                if (result["Ensemble Majority Vote"] === "Low" || result["Ensemble Majority Vote"] === "Normal") {
+                    colorClass = "light-green";
+                } else if (result["Ensemble Majority Vote"] === "Moderate") {
+                    colorClass = "light-yellow";
+                }
+
+                document.getElementById("result").innerHTML = `
+                    <div class="result-box">
+                        <p><strong>Random Forest:</strong> ${result["Random Forest"]}</p>
+                        <p><strong>SVM:</strong> ${result["SVM"]}</p>
+                        <p><strong>Logistic Regression:</strong> ${result["Logistic Regression"]}</p>
+                        <div class="final-prediction ${colorClass}">
+                            Final Prediction: ${result["Ensemble Majority Vote"]}
+                        </div>
+                    </div>
+                `;
+            } catch (err) {
+                console.error(err);
+                document.getElementById("result").innerHTML = `
+                    <div class="result-box light-red">
+                        <strong>Error:</strong> Could not fetch prediction. Check console.
+                    </div>`;
+            }
+        });
+    </script>
+</body>
+</html>

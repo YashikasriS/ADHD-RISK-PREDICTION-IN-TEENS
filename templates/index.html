@@ -1,0 +1,750 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ADHD Awareness for Teens</title>
+  <style>
+    /* General styling */
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: url('');
+      color: #000;
+    }
+
+    /* Fixed Navigation Bar */
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwoHBwcHBxAPBwcHBw0HBwcHCg8ICQcNFREWIiARExMYHSggGBoxGxUVITEhJSkrLi4uFx8zODMsNygtLisBCgoKDQ0NFQ0NFysdFR0rKy0rKystLTcrKysrLS0rKysrLTcrLTcrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAOEA4QMBIgACEQEDEQH/xAAZAAEBAQEBAQAAAAAAAAAAAAAAAwECBwT/xAAYEAEBAQEBAAAAAAAAAAAAAAAAERITAf/EABkBAQADAQEAAAAAAAAAAAAAAAABAgQDBf/EABkRAQEBAQEBAAAAAAAAAAAAAAAREhMCAf/aAAwDAQACEQMRAD8A9vpU9Gkxz0pSp00Q0pSp6KQ0pSp6KQ0pSp6KQ0pSp6NENKUqeikNKUqdKQ0pSp0pDSlKnopDSlKnTRDSlKnopDSlKno0Q0pSp6NENO6ONBDSdNJ0q8Z9KUqdKQ0pSp0pDSlKnSkNKU0nSkNKaKnSkNKaKnSkNKU0nSkNKUqdKQ0pSp0pDSlKnSkNKUqdKQ0pSp0pDSlKnSkNKaE6ENJ0qdKtGbalKnSkNqUqdKQ2pSp0pDalKnSkNqUqdKQ2pSp0pDalKnSkNqUqdKQ2pSp0pDalKnSkNqUqdKQ2pSp0pDalKnSkNqUToQ2no0lo0vGXaujSWjRDaujSWjRDatNJaNENq6NJ0pDamjSdKQ2po0nSkNqaNJ0pDamjSdKQ2po0nSkNqaNJ0pDamjSWjRDaujSWjRDaujSWjRDatYnppDaWjSejS8ZdqUqejRDamjSejRDalNJ6NENqaKno0Q2pTSejRDamip6NENqaNJ6NENqaNJ6NENqaNJ6NENqaNJ6NENqaNJ6NENqaNJ6NENqUqejRDalE6ENpaNJaNLxj6K6Klo0Q6K0qWjRDoro0lo0Q6K6NJaNEOitNJaNEOiujSWjRDoro0lo0Q6K6Klo0Q6K6NJaNEOiuipaNEOiujSWjRDoro0lo0Q6K6NJaNEOiuhLQQ6JaNIbNuuXn9V9GkNmzJ1X0aQ2bMnVfRpDZsynqvo0hs2ZR1X0aQ2bMnVfRpDZsydV9GkNmzJ1X0aQ2bMnVfRpDZsydV9GkNmzJ1X0aQ2bIdV9GkNmzJ1X0aQ2bMnVbTUNhk6vl6+HVAd8/HkdfS/U6oBn4dfS/U6oBn4dfS/U6oBn4dfS/U6oBn4dfS/U6oBn4dfS/U6oBn4dfS/U6oBn4dfS/U6oBn4dfS/U6+IBn4dfS/U6oBn4nr6X6nVAM/EdfS/U6oBn4dfS/U6oBn4dfS/URDPw6+nIwFGjAGjAGjAGjAGjAGjAGjAGjAGjAGjAGjAGjAGjAGtctByMBZowBowBowBowBowBowBowBowBowBowBowBowBowBowBzRgLNKwBpWARtGANpWAOmMAaMAbRgDRgDpjAGjAGlYA0YA0YA2jAHIylFmjKUGjKUGjKUGjKUGjKUGjKUGjKUGjKUGjKUGjKUGjKUGjKUGjKUGtc0BgwFo0YBGjAI0YBGjAI0YBGjAI0YBGjAI0YBGjAI0YQI0YBGjAI0YBHTHQpWnDGOgphyOgphyOgphyOgphyOgphzCOgphjHQUw5HTCmGDoKYcjoKYcjoKYctaFMOYOgphg0KYAEOgAAAAAAAAAAAAAAAAAAAAAAAAAAAD//Z');
+      padding: 15px 40px;
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.15);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      backdrop-filter: blur(10px);
+      box-sizing: border-box;
+   
+    }
+
+    .nav-left, .nav-right {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+    }
+
+    .nav-left .brand {
+      font-weight: 700;
+      font-size: 20px;
+      color: #000;
+      letter-spacing: 1px;
+      white-space: nowrap;
+    }
+
+    .nav-right {
+      display: flex;
+      gap: 25px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .nav-right a {
+      color: #000;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 16px;
+      transition: 0.3s;
+      position: relative;
+    }
+
+    .nav-right a::after {
+      content: '';
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      bottom: -5px;
+      left: 0;
+      background-color: #000;
+      transition: width 0.3s;
+    }
+
+    .nav-right a:hover::after {
+      width: 100%;
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+      }
+
+      .nav-left {
+        margin-bottom: 8px;
+      }
+
+      .nav-right {
+        gap: 15px;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+    }
+
+    /* Hero Section */
+
+
+.hero {
+  background: 
+    linear-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.1)),
+    url('https://st3.depositphotos.com/8211188/31663/v/450/depositphotos_316639766-stock-illustration-abstract-background-of-molecular-structures.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  color: black;
+  text-align: center;
+  padding: 120px 20px;
+  width: 85%;
+  margin: 80px auto 0 auto;
+  border-radius: 25px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  background-color: transparent;
+}
+
+/* Reduce top spacing of accordion container */
+.accordion-container {
+  margin-top: 0;                   /* remove extra space */
+  padding-top: 0;                  /* in case padding is causing it */
+}
+
+
+
+    .hero h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .hero p {
+      font-size: 1rem;
+      font-weight: 400;
+    }
+
+    /* Section container boxes */
+    .main-container {
+      width: 85%;
+      margin: 60px auto;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    .content-box {
+      background: white;
+      border-radius: 12px;
+      padding: 30px;
+      box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+      color: #000;
+    }
+
+    /* Accordion Section */
+    .accordion {
+      color: #000;
+    }
+
+    /* Add this to your existing <style> (creates a white box behind the accordion) */
+.container {
+  background: #ffffff;                     /* white back box behind the whole accordion */
+  border-radius: 15px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+  padding: 24px;
+  margin: 20px auto;
+  width: 100%;
+  max-width: 1100px;                       /* matches your layout width */
+  box-sizing: border-box;
+}
+
+/* Make each accordion topic its own card inside the white container */
+.acc-item {
+  background: #fff;                        /* individual white card */
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.06);
+  margin: 16px 0;                          /* spacing between cards */
+  overflow: hidden;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+  border: 1px solid rgba(0,0,0,0.04);     /* subtle border to define box */
+}
+.accordion-item {
+  background-color: #A0F0D0; /* soft aqua green */
+  border-radius: 15px;
+  margin-bottom: 20px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+
+/* Accordion Header (Blue Section) */
+.acc-head {
+  background-color:#65c3c4;
+  padding: 20px 24px;
+  display: flex;
+  justify-content: space-between; /* pushes the + to the end */
+  align-items: center;
+  cursor: pointer;
+  border-radius: 12px;
+  font-size: 1.1rem;
+  transition: background-color 0.2s ease;
+}
+
+/* Hover effect for header */
+.acc-head:hover {
+  background-color: #d8f7ff;
+}
+
+/* Bold the first line (title) inside the header */
+.acc-head h3 {
+  font-weight: 700;
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+/* Subtitle (second line) style */
+.acc-head p {
+  margin: 4px 0 0;
+  font-size: 0.95rem;
+  color: #333;
+  font-weight: 400;
+}
+
+/* Align text vertically when multiple lines are present */
+.acc-head-text {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+/* The + icon styling */
+.acc-icon {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #000;
+  margin-left: 16px;
+  flex-shrink: 0;
+}
+
+
+/* Hover lift for visual polish */
+.acc-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(0,0,0,0.10);
+}
+
+/* Adjust the internal body so it matches card spacing */
+.acc-body {
+  background: transparent;                 /* body sits inside card (no extra white) */
+  padding: 20px;
+}
+
+
+    .acc-sub {
+      font-size: 14px;
+      color: #000;
+    }
+
+    .toggle {
+      font-size: 24px;
+      color: #000;
+      user-select: none;
+    }
+
+    .acc-body {
+      display: none;
+      padding: 20px;
+      background-color: #ffffff;
+      line-height: 1.6;
+      animation: fadeIn 0.4s ease-in-out;
+      color: #000;
+    }
+
+    .acc-body.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(-5px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .checks li {
+      margin: 6px 0;
+      color: #000;
+    }
+
+    .muted {
+      color: #000;
+      font-size: 14px;
+    }
+
+    /* Videos Section */
+    .videos-section {
+      color: #000;
+    }
+
+    .videos-title {
+      text-align: center;
+      font-size: 26px;
+      color: #000;
+      font-weight: 600;
+      margin-bottom: 20px;
+    }
+
+    .video-container {
+      display: flex;
+      overflow-x: auto;
+      gap: 20px;
+      padding: 10px;
+      scroll-behavior: smooth;
+    }
+
+    .video-container::-webkit-scrollbar {
+      display: none;
+    }
+
+    .video-card {
+      flex: 0 0 320px;
+      background:url('https://st3.depositphotos.com/8211188/31663/v/450/depositphotos_316639766-stock-illustration-abstract-background-of-molecular-structures.jpg');
+      border-radius: 10px;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+      overflow: hidden;
+      text-align: center;
+      transition: 0.3s;
+      color: #000;
+    }
+
+    .video-card:hover {
+      transform: translateY(-4px);
+    }
+
+    .video-card iframe {
+      width: 100%;
+      height: 180px;
+      border: none;
+    }
+
+    .video-card p {
+      padding: 10px;
+      font-size: 14px;
+      color: #000;
+    }
+
+    /* Testimonials Section */
+    .testimonials {
+      text-align: center;
+      padding: 10px;
+      background: none;
+      margin: 0;
+    }
+
+    .testimonials h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+      color: #000;
+    }
+
+    .testimonial-scroll {
+      display: flex;
+      overflow-x: auto;
+      gap: 25px;
+      scroll-behavior: smooth;
+      padding: 10px 0;
+      justify-content: flex-start;
+      scrollbar-width: none;
+    }
+
+    .testimonial-scroll::-webkit-scrollbar {
+      display: none;
+    }
+
+    .testimonial {
+      flex: 0 0 320px;
+      background: #fff;
+      border: 2px solid #d6f4ff;
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+      padding: 25px 30px;
+      text-align: left;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .testimonial:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+    }
+
+    .testimonial p {
+      font-size: 1.05rem;
+      color: #333;
+      line-height: 1.6;
+      margin-bottom: 15px;
+    }
+
+    .testimonial h4 {
+      font-weight: 700;
+      color: #000;
+      margin-top: 10px;
+    }
+
+    @media (max-width: 768px) {
+      .testimonial {
+        flex: 0 0 85%;
+      }
+    }
+
+    footer {
+      background:url('data:image/jpeg;base64,/9j/4AAQSkZJRgABAQAAAQABAAD/2wCEAAkGBwoHBwcHBxAPBwcHBw0HBwcHCg8ICQcNFREWIiARExMYHSggGBoxGxUVITEhJSkrLi4uFx8zODMsNygtLisBCgoKDQ0NFQ0NFysdFR0rKy0rKystLTcrKysrLS0rKysrLTcrLTcrKysrKysrKysrKysrKysrKysrKysrKysrK//AABEIAOEA4QMBIgACEQEDEQH/xAAZAAEBAQEBAQAAAAAAAAAAAAAAAwECBwT/xAAYEAEBAQEBAAAAAAAAAAAAAAAAERITAf/EABkBAQADAQEAAAAAAAAAAAAAAAABAgQDBf/EABkRAQEBAQEBAAAAAAAAAAAAAAAREhMCAf/aAAwDAQACEQMRAD8A9vpU9Gkxz0pSp00Q0pSp6KQ0pSp6KQ0pSp6KQ0pSp6NENKUqeikNKUqdKQ0pSp0pDSlKnopDSlKnTRDSlKnopDSlKno0Q0pSp6NENO6ONBDSdNJ0q8Z9KUqdKQ0pSp0pDSlKnSkNKU0nSkNKaKnSkNKaKnSkNKU0nSkNKUqdKQ0pSp0pDSlKnSkNKUqdKQ0pSp0pDSlKnSkNKaE6ENJ0qdKtGbalKnSkNqUqdKQ2pSp0pDalKnSkNqUqdKQ2pSp0pDalKnSkNqUqdKQ2pSp0pDalKnSkNqUqdKQ2pSp0pDalKnSkNqUToQ2no0lo0vGXaujSWjRDaujSWjRDatNJaNENq6NJ0pDamjSdKQ2po0nSkNqaNJ0pDamjSdKQ2po0nSkNqaNJ0pDamjSWjRDaujSWjRDaujSWjRDatYnppDaWjSejS8ZdqUqejRDamjSejRDalNJ6NENqaKno0Q2pTSejRDamip6NENqaNJ6NENqaNJ6NENqaNJ6NENqaNJ6NENqaNJ6NENqaNJ6NENqUqejRDalE6ENpaNJaNLxj6K6Klo0Q6K0qWjRDoro0lo0Q6K6NJaNEOitNJaNEOiujSWjRDoro0lo0Q6K6Klo0Q6K6NJaNEOiuipaNEOiujSWjRDoro0lo0Q6K6NJaNEOiuhLQQ6JaNIbNuuXn9V9GkNmzJ1X0aQ2bMnVfRpDZsynqvo0hs2ZR1X0aQ2bMnVfRpDZsydV9GkNmzJ1X0aQ2bMnVfRpDZsydV9GkNmzJ1X0aQ2bIdV9GkNmzJ1X0aQ2bMnVbTUNhk6vl6+HVAd8/HkdfS/U6oBn4dfS/U6oBn4dfS/U6oBn4dfS/U6oBn4dfS/U6oBn4dfS/U6oBn4dfS/U6oBn4dfS/U6oBn4dfS/U6+IBn4dfS/U6oBn4nr6X6nVAM/EdfS/U6oBn4dfS/U6oBn4dfS/URDPw6+nIwFGjAGjAGjAGjAGjAGjAGjAGjAGjAGjAGjAGjAGjAGtctByMBZowBowBowBowBowBowBowBowBowBowBowBowBowBowBzRgLNKwBpWARtGANpWAOmMAaMAbRgDRgDpjAGjAGlYA0YA0YA2jAHIylFmjKUGjKUGjKUGjKUGjKUGjKUGjKUGjKUGjKUGjKUGjKUGjKUGjKUGtc0BgwFo0YBGjAI0YBGjAI0YBGjAI0YBGjAI0YBGjAI0YQI0YBGjAI0YBHTHQpWnDGOgphyOgphyOgphyOgphyOgphzCOgphjHQUw5HTCmGDoKYcjoKYcjoKYctaFMOYOgphg0KYAEOgAAAAAAAAAAAAAAAAAAAAAAAAAAAD//Z');
+      color: #000;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 70px;
+      font-size: 14px;
+      font-weight: 600;
+    }
+    .acc-title {
+  font-family: 'DM Serif Text', serif;
+  font-weight: 600; /* Simulates bold */
+  letter-spacing: 0.5px;
+  text-shadow: 0.5px 0.5px 0 #00000020; /* Optional subtle bold effect */
+}
+.acc-sub.muted {
+  font-family: 'Poiret One';
+  font-weight: 400; /* normal for this font */
+  color: #444; /* light black */
+}
+
+
+
+  </style>
+</head>
+<body>
+
+<nav>
+    <div class="nav-left">
+        <span class="brand">ADHD Teen</span>
+    </div>
+    <div class="nav-right">
+        <a href="{{ url_for('home') }}">Home</a>
+        <a href="{{ url_for('predict') }}">Predict Risk</a>
+        
+        
+    </div>
+</nav>
+
+
+  </nav>
+
+  <section class="hero">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Fugaz+One&display=swap" rel="stylesheet">
+<h1>Together for ADHD Awareness and Support</h1>
+
+    <p>Learn, understand, and manage ADHD effectively with expert insights and teen-focused resources.</p>
+  </section>
+
+  <div class="main-container">
+
+   
+<div class="container">
+  <!-- LEFT: Main accordion/content -->
+ 
+    <div class="accordion" id="accordion">
+
+      <!-- 1. Understanding ADHD in Teenagers -->
+      <article class="acc-item" id="understanding">
+        <div class="acc-head" role="button" tabindex="0" data-target="body-understanding">
+          <div>
+            <div class="acc-title">Understanding ADHD in Teenagers</div>
+            <div class="acc-sub muted">What ADHD is, how it appears in adolescence, and core facts to know.</div>
+          </div>
+          <div class="toggle">+</div>
+        </div>
+        <div class="acc-body" id="body-understanding">
+          <p><strong>ADHD (Attention-Deficit/Hyperactivity Disorder)</strong> is a neurodevelopmental condition that affects attention, impulse control, and activity regulation. In teenagers, ADHD often looks different than in younger children — hyperactivity may become internalized (restlessness, feeling "on edge") and inattention may show as poor organization, missed deadlines, and difficulty sustaining study sessions.</p>
+
+          <h4 style="margin-top:12px">Key points</h4>
+          <ul class="checks">
+            <li><strong>Not just "lack of effort":</strong> ADHD is rooted in brain development and executive function differences.</li>
+            <li><strong>Symptoms vary:</strong> Some teens are primarily inattentive (daydreaming), others primarily hyperactive-impulsive, and many are combined.</li>
+            <li><strong>Impact:</strong> Academic performance, social relationships, and emotional wellbeing can all be affected if ADHD is unmanaged.</li>
+          </ul>
+
+          <h4 style="margin-top:12px">Quick examples of teen presentations</h4>
+          <ul class="checks">
+            <li>Struggling to start homework despite knowing how to do it.</li>
+            <li>Frequently late, losing assignments, or forgetting obligations.</li>
+            <li>Emotional reactivity — quick to frustration or discouragement.</li>
+          </ul>
+
+          <p class="muted" style="margin-top:10px">Tip: Early recognition and support (structured routines, school accommodations, therapy) often improve long-term outcomes.</p>
+        </div>
+      </article>
+
+      <!-- 2. Challenges Faced by Teens with ADHD -->
+      <article class="acc-item" id="challenges">
+        <div class="acc-head" role="button" tabindex="0" data-target="body-challenges">
+          <div>
+            <div class="acc-title">Challenges Faced by Teens with ADHD</div>
+            <div class="acc-sub muted">Academic, social, emotional and behavioral hurdles commonly encountered.</div>
+          </div>
+          <div class="toggle">+</div>
+        </div>
+        <div class="acc-body" id="body-challenges">
+          <p>ADHD can create specific obstacles during adolescence when expectations for independence, organization, and social skills increase. These challenges often present across multiple areas of life.</p>
+
+          <h4>Academic difficulties</h4>
+          <ul class="checks">
+            <li>Problems with planning, prioritizing, and finishing long-term assignments.</li>
+            <li>Underperformance relative to intellectual ability (inconsistent test scores).</li>
+            <li>Difficulty with note-taking, sustained reading, and test-taking focus.</li>
+          </ul>
+
+          <h4 style="margin-top:10px">Social & emotional effects</h4>
+          <ul class="checks">
+            <li>Higher risk of peer conflict, social withdrawal, or being misunderstood.</li>
+            <li>Lower self-esteem due to repeated "failures" at school or in relationships.</li>
+            <li>Greater susceptibility to anxiety or depression if difficulties persist unchecked.</li>
+          </ul>
+
+          <h4 style="margin-top:10px">Behavioral & safety concerns</h4>
+          <ul class="checks">
+            <li>Increased impulsive decisions — e.g., risky driving, experimenting with substances.</li>
+            <li>Sleep problems that worsen attention and mood.</li>
+          </ul>
+
+          <p class="muted" style="margin-top:10px">Practical note: Addressing these challenges requires a multi-pronged approach — school supports, therapy, parent coaching, and sometimes medication.</p>
+        </div>
+      </article>
+
+      <!-- 3. Diagnosing ADHD in Adolescence -->
+      <article class="acc-item" id="diagnosing">
+        <div class="acc-head" role="button" tabindex="0" data-target="body-diagnosing">
+          <div>
+            <div class="acc-title">Diagnosing ADHD in Adolescence</div>
+            <div class="acc-sub muted">How professionals evaluate ADHD and what to expect during an assessment.</div>
+          </div>
+          <div class="toggle">+</div>
+        </div>
+        <div class="acc-body" id="body-diagnosing">
+          <p>Diagnosis is clinical — there is no single laboratory test. Providers use a combination of medical history, standardized rating scales, interviews, and observations to make a diagnosis.</p>
+
+          <h4>Core steps in evaluation</h4>
+          <ol style="margin-left:18px">
+            <li><strong>Clinical interview:</strong> with the teen and caregivers to document symptoms, onset, and impairment.</li>
+            <li><strong>Standardized questionnaires:</strong> (e.g., Conners, Vanderbilt) filled by parents, teachers, and sometimes the teen.</li>
+            <li><strong>Academic records & collateral information:</strong> school reports, grades, teacher feedback.</li>
+            <li><strong>Medical exam:</strong> to rule out other causes (hearing/vision, thyroid, medication effects).</li>
+            <li><strong>Testing when needed:</strong> neuropsychological testing or learning evaluations if learning disabilities or complex comorbidities are suspected.</li>
+          </ol>
+
+          <h4 style="margin-top:10px">Diagnostic criteria highlights (DSM-based)</h4>
+          <ul class="checks">
+            <li>Symptoms present for at least six months and inconsistent with developmental level.</li>
+            <li>Several symptoms present before age 12 (historical review required).</li>
+            <li>Symptoms present in two or more settings (home, school, social).</li>
+            <li>Clear evidence symptoms cause impairment in functioning.</li>
+          </ul>
+
+          <p class="muted" style="margin-top:10px">Advice: If you suspect ADHD, gather school records and specific examples of behaviors across settings — this speeds diagnostic clarity.</p>
+        </div>
+      </article>
+
+      <!-- 4. Co-occurring Conditions -->
+      <article class="acc-item" id="cooccurring">
+        <div class="acc-head" role="button" tabindex="0" data-target="body-cooccurring">
+          <div>
+            <div class="acc-title">Co-occurring Conditions</div>
+            <div class="acc-sub muted">Other conditions that commonly appear with ADHD and why they matter.</div>
+          </div>
+          <div class="toggle">+</div>
+        </div>
+        <div class="acc-body" id="body-cooccurring">
+          <p>Many teens with ADHD have one or more co-occurring (comorbid) conditions. Identifying these is crucial because they affect treatment choices and outcomes.</p>
+
+          <h4>Common co-occurring disorders</h4>
+          <ul class="checks">
+            <li><strong>Anxiety disorders:</strong> generalized anxiety, social anxiety — worsen attention and can mimic ADHD.</li>
+            <li><strong>Depression:</strong> low mood and motivation reduce concentration and energy.</li>
+            <li><strong>Learning disabilities:</strong> like dyslexia or dyscalculia — cause academic struggles that overlap with ADHD symptoms.</li>
+            <li><strong>Oppositional Defiant Disorder (ODD) / Conduct Disorder (CD):</strong> behavioral challenges sometimes co-occur.</li>
+            <li><strong>Sleep disorders:</strong> insomnia, delayed sleep phase — poor sleep impairs focus and emotional regulation.</li>
+          </ul>
+
+          <h4 style="margin-top:10px">Why comorbidity matters</h4>
+          <p class="muted">Comorbid conditions can change how ADHD looks, complicate diagnosis, and require parallel treatments (e.g., treating anxiety alongside ADHD). A team approach often works best.</p>
+        </div>
+      </article>
+
+      <!-- 5. Treatment & Coping Strategies -->
+      <article class="acc-item" id="treatment">
+        <div class="acc-head" role="button" tabindex="0" data-target="body-treatment">
+          <div>
+            <div class="acc-title">Treatment & Coping Strategies</div>
+            <div class="acc-sub muted">Evidence-based treatments and practical daily strategies for teens and families.</div>
+          </div>
+          <div class="toggle">+</div>
+        </div>
+        <div class="acc-body" id="body-treatment">
+          <p>Treatment is individualized and often combines behavioral strategies, educational supports, and — when appropriate — medication. The goal is improved functioning and quality of life.</p>
+
+          <h4>Key treatment components</h4>
+          <ul class="checks">
+            <li><strong>Behavioral therapy:</strong> parent training, teen-focused skills training, and organizational coaching.</li>
+            <li><strong>Cognitive Behavioral Therapy (CBT):</strong> for emotion regulation, planning, and problem-solving—especially helpful with anxiety/depression.</li>
+            <li><strong>Medication:</strong> stimulant medications (methylphenidate, amphetamines) are effective for many teens; non-stimulants (atomoxetine, guanfacine) are options for some.</li>
+            <li><strong>Educational supports:</strong> classroom accommodations, 504 plan or IEP, extended time, structured breaks, and clear instructions.</li>
+            <li><strong>Lifestyle:</strong> consistent sleep schedule, regular exercise, healthy meals, and reducing distractions during study time.</li>
+          </ul>
+
+          <h4 style="margin-top:10px">Practical coping tips for teens</h4>
+          <ul class="checks">
+            <li>Break big tasks into short steps and use timers (Pomodoro technique).</li>
+            <li>Use planners, apps or checklists; place visual reminders where you will see them.</li>
+            <li>Create a distraction-free study space and use headphones/white noise if useful.</li>
+            <li>Set predictable routines for mornings, homework, and bedtime.</li>
+          </ul>
+
+          <p class="muted" style="margin-top:10px">Note: Medication requires physician supervision and regular follow-up for dosing & side-effect monitoring. Many teens benefit most from combined approaches (therapy + supports + medication where needed).</p>
+        </div>
+      </article>
+
+      <!-- 6. Building Confidence & Support Systems -->
+      <article class="acc-item" id="confidence">
+        <div class="acc-head" role="button" tabindex="0" data-target="body-confidence">
+          <div>
+            <div class="acc-title">Building Confidence & Support Systems</div>
+            <div class="acc-sub muted">How families, schools, and peers can support teens to thrive, not just cope.</div>
+          </div>
+          <div class="toggle">+</div>
+        </div>
+        <div class="acc-body" id="body-confidence">
+          <p>Beyond symptom control, thriving with ADHD depends on scaffolding, empathy, strong relationships, and skill-building — all aimed at increasing competence and self-worth.</p>
+
+          <h4>Family strategies</h4>
+          <ul class="checks">
+            <li>Provide predictable routines and clear expectations; avoid vague instructions.</li>
+            <li>Use positive reinforcement — celebrate effort and small wins.</li>
+            <li>Work with teens on realistic goals and involve them in planning supports.</li>
+            <li>Model organization and emotional regulation; be patient and consistent.</li>
+          </ul>
+
+          <h4 style="margin-top:10px">School & community supports</h4>
+          <ul class="checks">
+            <li>Request classroom accommodations (extra time, note-taking support, structured check-ins).</li>
+            <li>Encourage mentoring, tutoring, or study skill groups.</li>
+            <li>Promote extracurriculars that build strengths (sports, arts, technology).</li>
+          </ul>
+
+          <h4 style="margin-top:10px">Building self-advocacy</h4>
+          <ul class="checks">
+            <li>Teach teens to explain their needs to teachers and employers in a calm, factual way.</li>
+            <li>Help them learn how to request reasonable adjustments and track progress.</li>
+            <li>Encourage realistic self-talk and problem-solving skills (CBT techniques).</li>
+          </ul>
+
+          <p class="muted" style="margin-top:10px">Outcome: With supports, adolescents with ADHD often develop resilience, succeed academically and socially, and learn to channel their strengths positively.</p>
+        </div>
+      </article>
+
+    </div>
+  </div>
+
+    <!-- Video Box -->
+    <div class="content-box">
+      <div class="videos-section">
+        <h2 class="videos-title">Expert Insights & Educational Videos</h2>
+        <div class="video-container">
+          <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/5l2RIOhDXvU" allowfullscreen></iframe>
+            <p>What is ADHD? A clear overview by medical professionals.</p>
+          </div>
+          <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/O0qhREeEbBo" allowfullscreen></iframe>
+            <p>Living with ADHD: Teens share their real-life experiences.</p>
+          </div>
+          <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/JiwZQNYlGQI" allowfullscreen></iframe>
+            <p>Failing at Normal: An ADHD Success Story</p>
+          </div>
+          <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/2_nyNWeNmtY" allowfullscreen></iframe>
+            <p>Doctors explain the role of therapy and medication.</p>
+          </div>
+          <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/4pwa1gdqCvo" allowfullscreen></iframe>
+            <p>Parents’ guide to supporting teens with ADHD.</p>
+          </div>
+           <div class="video-card">
+            <iframe src="https://www.youtube.com/embed/71VOit3m8_o" allowfullscreen></iframe>
+            <p>The Truth About ADHD. | Dr Daniel Amen</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Testimonials Box -->
+    <div class="content-box">
+      <section class="testimonials">
+        <h2>Doctor'sTestimonials</h2>
+        <div class="testimonial-scroll">
+          <div class="testimonial">
+            <p>"Having ADHD is not a deficit — it’s a different way of thinking. The same traits that cause struggle in one setting can lead to brilliance in anothe"</p>
+            <h4>Dr. Edward Hallowell, Psychiatrist & ADHD Expert</h4>
+          </div>
+          <div class="testimonial">
+            <p>"Therapy helped me realize ADHD isn’t a weakness — it’s just a different way my brain works."</p>
+            <h4>— Aarav, 16</h4>
+          </div>
+          <div class="testimonial">
+            <p>"ADHD doesn’t mean inability; it means thinking beyond the ordinary."</p>
+            <h4>Dr. Russell Barkley, ADHD Researcher</h4>
+          </div>
+          <div class="testimonial">
+            <p>"Routine, empathy, and understanding make daily life smoother for teens with ADHD."</p>
+            <h4>— Dr. Nisha Rao</h4>
+          </div>
+          <div class="testimonial">
+            <p>"When ADHD is guided with structure and love, it becomes creativity with direction."</p>
+            <h4>— Dr. Ned Hallowell</h4>
+          </div>
+           <div class="testimonial">
+            <p>"ADHD isn’t a lack of focus; it’s having too many interests."</p>
+            <h4>— Dr. Venkateswaran, Child & Adolescent Psychiatry</h4>
+          </div>
+           <div class="testimonial">
+            <p>"ADHD minds are wired for curiosity and exploration — qualities that push humanity forward.”"</p>
+            <h4>-Dr. V. Murugan, Neurologist,</h4>
+          </div>
+        </div>
+
+      </section>
+    </div>
+
+  </div>
+
+  <footer>© 2025 ADHD | Designed for Teens’ Wellbeing</footer>
+
+  <script>
+    document.querySelectorAll('.acc-head').forEach(head => {
+      head.addEventListener('click', () => {
+        const body = head.nextElementSibling;
+        body.classList.toggle('active');
+        const toggle = head.querySelector('.toggle');
+        toggle.textContent = body.classList.contains('active') ? '-' : '+';
+      });
+    });
+  </script>
+</body>
+</html>
